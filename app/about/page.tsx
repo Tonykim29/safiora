@@ -26,9 +26,9 @@ export default function AboutPage() {
         그 경계를 설계합니다.
       </h1>
       <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-slate">
-        Safiora는 AI, 정보보안, 개인정보보호, 전자문서, ISO 인증을 하나의 체계로 다루는 컨설팅
-        브랜드입니다. 각 영역을 따로 맡기면 생기는 틈을 없애고, 처음부터 끝까지 같은 기준으로
-        관리합니다.
+        Safiora는 AI, 정보보안, 개인정보보호, 전자문서, ISO 인증을 하나의 체계로 다루는 컨설팅 브랜드입니다.
+        <br />
+        각 영역을 따로 맡기면 생기는 틈을 없애고, 처음부터 끝까지 같은 기준으로 관리합니다.
       </p>
 
       <div className="mt-16 rounded-sm bg-shield-gradient px-8 py-12 text-white md:px-14">
@@ -43,7 +43,7 @@ export default function AboutPage() {
         <div className="mt-8 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-2">
           {VALUES.map((v) => (
             <div key={v.title} className="bg-white p-8 transition-colors hover:bg-paper">
-              <p className="text-[16px] font-semibold tracking-[-0.01em]">{v.title}</p>
+              <p className="text-[20px] font-semibold tracking-[-0.01em]">{v.title}</p>
               <p className="mt-2 text-[14px] leading-relaxed text-slate">{v.desc}</p>
             </div>
           ))}
