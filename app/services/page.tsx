@@ -7,7 +7,6 @@ export const metadata: Metadata = {
 
 const SERVICES = [
   {
-    clause: "4.1",
     title: "AI 솔루션 컨설팅",
     points: [
       "AI 도입 전 리스크·거버넌스 진단",
@@ -16,12 +15,10 @@ const SERVICES = [
     ],
   },
   {
-    clause: "4.2",
     title: "정보보안 관리체계 구축",
     points: ["ISO/IEC 27001 갭 분석 및 위험평가", "보안 정책·절차 문서 작성", "인증심사 대응 및 사후관리"],
   },
   {
-    clause: "5.1",
     title: "개인정보보호 컨설팅",
     points: [
       "ISO/IEC 27701 기준 개인정보 처리방침 점검",
@@ -30,12 +27,10 @@ const SERVICES = [
     ],
   },
   {
-    clause: "5.2",
     title: "전자문서 관리체계",
     points: ["종이 문서의 전자화 전환 계획 수립", "문서 보관·검증·이력관리 체계 설계", "부서별 워크플로우 정의"],
   },
   {
-    clause: "6.1",
     title: "ISO 인증 컨설팅·거버넌스",
     points: [
       "42001·27001·27701 통합 인증 로드맵 수립",
