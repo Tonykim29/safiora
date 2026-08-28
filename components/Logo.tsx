@@ -1,15 +1,15 @@
 type LogoProps = {
   size?: number;
   withWordmark?: boolean;
-  mono?: boolean; // true면 워드마크를 흰색으로 (어두운 배경용)
+  mono?: boolean; // true면 어두운 배경용 화이트 버전 + 화이트 워드마크
 };
 
 export default function Logo({ size = 32, withWordmark = true, mono = false }: LogoProps) {
   return (
     <div className="flex items-center gap-2.5">
-      {/* 실제 브랜드 로고 파일 (public/brand/logo.png) */}
+      {/* 실제 브랜드 로고 — potrace로 벡터화한 SVG (public/brand) */}
       <img
-        src="/brand/logo.png"
+        src={mono ? "/brand/logo-mono-white.svg" : "/brand/logo.svg"}
         alt="Safiora"
         width={size}
         height={size * (190 / 175)}

@@ -50,7 +50,7 @@ export default function SealStamp({ code, title, status }: SealStampProps) {
             </textPath>
           </text>
         </svg>
-        <img src="/brand/logo.png" alt="" width={32} height={35} className="relative" />
+        <img src="/brand/logo.svg" alt="" width={30} height={33} className="relative" />
       </div>
       <div>
         <p className="font-semibold text-ink">{title}</p>
