@@ -54,14 +54,11 @@ export default function ServicesPage() {
       <div className="mt-14 grid gap-4 md:grid-cols-2">
         {SERVICES.map((s) => (
           <div
-            key={s.clause}
+            key={s.title}
             className={`rounded-sm border border-line p-8 transition-colors hover:border-blue-bright md:p-10 ${
               s.featured ? "md:col-span-2 bg-ink text-white" : "bg-white"
             }`}
           >
-            <span className={`clause-num text-[15px] ${s.featured ? "text-glow" : "text-blue-bright"}`}>
-              {s.clause}
-            </span>
             <h2 className="mt-3 text-[20px] font-bold tracking-[-0.01em] md:text-[22px]">{s.title}</h2>
             <ul className="mt-5 grid gap-2 md:grid-cols-2">
               {s.points.map((p) => (
