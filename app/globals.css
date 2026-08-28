@@ -1,23 +1,73 @@
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* 셀프호스팅 폰트 — 외부 CDN 의존 제거 (성능·안정성·보안 원칙에 부합) */
+@font-face {
+  font-family: "Pretendard";
+  src: url("/fonts/pretendard/PretendardVariable.woff2") format("woff2-variations");
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/fonts/space-grotesk/space-grotesk-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/fonts/space-grotesk/space-grotesk-latin-500-normal.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/fonts/space-grotesk/space-grotesk-latin-700-normal.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --font-pretendard: "Pretendard", sans-serif;
+  --font-pretendard: "Pretendard", -apple-system, BlinkMacSystemFont, "Malgun Gothic", sans-serif;
   --font-space-grotesk: "Space Grotesk", monospace;
+
+  /* 디자인 토큰 (tailwind.config.ts와 동일 값 유지) */
+  --c-ink: #05070c;
+  --c-paper: #f6f7f5;
+  --c-slate: #565f6e;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
-  background-color: #f5f7fa;
-  color: #0b1220;
+  background-color: var(--c-paper);
+  color: var(--c-ink);
   font-family: var(--font-pretendard);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* 한글 어절 단위 줄바꿈 — 음절 중간에서 끊기는 현상 방지 */
+body {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+/* 영문 조항 번호·라벨류는 원래 규칙(하이픈/어디서든 줄바꿈)을 유지 */
+.font-mono {
+  word-break: normal;
 }
 
 /* 인증서 형태의 코너 등록마크 - 브랜드 시그니처 요소 */
@@ -65,19 +115,10 @@ body {
   letter-spacing: 0.02em;
 }
 
-/* 접근성: 모션 최소화 환경 대응 */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
 :focus-visible {
   outline: 2px solid #2fa98c;
   outline-offset: 2px;
+  border-radius: 1px;
 }
 
 /* 히어로 전용: 미세 그레인 텍스처 (SVG 노이즈, 저투명도) */
@@ -96,4 +137,11 @@ body {
   border-radius: 9999px;
   filter: blur(90px);
   pointer-events: none;
+}
+
+/* 터치 타깃 최소 44px 확보 (모바일 인간공학 기준) */
+.tap-target {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
 }

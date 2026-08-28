@@ -55,12 +55,21 @@ export default function SealStamp({ code, title, status }: SealStampProps) {
             d="M24 4L6 10.5V22C6 33.5 13.6 42.2 24 45C34.4 42.2 42 33.5 42 22V10.5L24 4Z"
             fill="#12306B"
           />
-          <path
-            d="M24 15C24 15 32 16.5 32 24.5C32 30 27.5 33 24 33.5C20.5 33 16 30 16 24.5C16 16.5 24 15 24 15Z"
-            fill="none"
-            stroke="#F5F7FA"
-            strokeWidth="1.6"
-          />
+          <g transform="rotate(16 24 24)" opacity={0.95}>
+            <path
+              d="M24 13.5C29.5 17 29.8 30 24 34.5C18.2 30 18.5 17 24 13.5Z"
+              fill="none"
+              stroke="#F5F7FA"
+              strokeWidth="1.5"
+            />
+            <path d="M24 16V32" stroke="#F5F7FA" strokeWidth="1.1" strokeLinecap="round" />
+            <path
+              d="M24 20.5L20.8 23.5M24 26.5L27.2 29.2"
+              stroke="#F5F7FA"
+              strokeWidth="1"
+              strokeLinecap="round"
+            />
+          </g>
         </svg>
       </div>
       <div>

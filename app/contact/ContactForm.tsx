@@ -29,7 +29,7 @@ export default function ContactForm() {
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="mt-2 w-full rounded-sm border border-line bg-white px-4 py-3 text-[14px] outline-none focus-visible:border-blue-bright"
+            className="mt-2 w-full rounded-sm border border-line bg-white px-4 py-3 text-[16px] outline-none transition-colors focus-visible:border-blue-bright focus-visible:ring-2 focus-visible:ring-blue-bright/20"
           />
         </label>
         <label className="block">
@@ -37,7 +37,7 @@ export default function ContactForm() {
           <input
             value={org}
             onChange={(e) => setOrg(e.target.value)}
-            className="mt-2 w-full rounded-sm border border-line bg-white px-4 py-3 text-[14px] outline-none focus-visible:border-blue-bright"
+            className="mt-2 w-full rounded-sm border border-line bg-white px-4 py-3 text-[16px] outline-none transition-colors focus-visible:border-blue-bright focus-visible:ring-2 focus-visible:ring-blue-bright/20"
           />
         </label>
       </div>
@@ -47,7 +47,7 @@ export default function ContactForm() {
         <select
           value={service}
           onChange={(e) => setService(e.target.value)}
-          className="mt-2 w-full rounded-sm border border-line bg-white px-4 py-3 text-[14px] outline-none focus-visible:border-blue-bright"
+          className="mt-2 w-full rounded-sm border border-line bg-white px-4 py-3 text-[16px] outline-none transition-colors focus-visible:border-blue-bright focus-visible:ring-2 focus-visible:ring-blue-bright/20"
         >
           <option>AI 솔루션 컨설팅</option>
           <option>정보보안 관리체계 구축</option>
@@ -65,13 +65,13 @@ export default function ContactForm() {
           rows={6}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="mt-2 w-full rounded-sm border border-line bg-white px-4 py-3 text-[14px] outline-none focus-visible:border-blue-bright"
+          className="mt-2 w-full rounded-sm border border-line bg-white px-4 py-3 text-[16px] outline-none transition-colors focus-visible:border-blue-bright focus-visible:ring-2 focus-visible:ring-blue-bright/20"
         />
       </label>
 
       <button
         type="submit"
-        className="rounded-sm bg-ink px-6 py-3 text-[14px] font-medium text-white transition-colors hover:bg-blue-deep"
+        className="tap-target rounded-sm bg-ink px-6 text-[14px] font-medium text-white transition-colors hover:bg-blue-deep"
       >
         메일로 보내기
       </button>
