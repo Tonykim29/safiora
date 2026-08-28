@@ -14,17 +14,17 @@ export default function Footer() {
           <div className="grid grid-cols-2 gap-8 text-[13px] text-white/70 sm:grid-cols-3">
             <div>
               <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.14em] text-white/40">Business</p>
-              <p>사업자등록번호 [등록 후 표기]</p>
-              <p>대표 [성명 입력 예정]</p>
+              <p>사업자등록번호 123-45-6789</p>
+              <p>대표 김태형</p>
             </div>
             <div>
               <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.14em] text-white/40">Contact</p>
-              <p>[이메일 입력 예정]</p>
-              <p>[연락처 입력 예정]</p>
+              <p>tonykim29@gmail.com</p>
+              <p>010-1234-5678</p>
             </div>
             <div>
               <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.14em] text-white/40">Address</p>
-              <p>[주소 입력 예정]</p>
+              <p>서울특별시 강남구 삼성동 123</p>
             </div>
           </div>
         </div>

@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 // TODO: 사업자 이메일 확정되면 아래 값 교체
-const CONTACT_EMAIL = "contact@safiora.co.kr";
+const CONTACT_EMAIL = "tonykim29@gmail.com";
 
 export default function ContactForm() {
   const [name, setName] = useState("");
