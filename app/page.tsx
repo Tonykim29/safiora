@@ -65,9 +65,8 @@ export default function Home() {
             </h2>
           </div>
           <p className="text-[15px] leading-relaxed text-slate">
-            Safiora는 ISO/IEC 42001, 27001, 27701 예비심사원 자격을 보유한 대표가 직접 컨설팅부터 문서
-            작성, 심사 대응까지 맡습니다. 외주 하청 구조 없이 처음부터 끝까지 같은 사람이 책임집니다.
-            공공·금융 사업 제안서 작성과 발표 경험을 바탕으로, 평가자가 실제로 확인하는 지점을 압니다.
+            Safiora는 ISO/IEC 42001, 27001, 27701 인증심사원 자격을 보유한 대표가 직접 컨설팅부터 문서
+            작성, 심사 대응까지 맡습니다. 외주 하청 구조 없이 처음부터 끝까지 같은 사람이 책임집니다.            
           </p>
         </div>
       </section>
@@ -87,30 +86,30 @@ export default function Home() {
 
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             <div className="group rounded-sm border border-line p-8 transition-colors hover:border-blue-bright md:col-span-2 md:row-span-1">
-              <span className="clause-num text-[13px] text-blue-bright">6.1</span>
+{/*           <span className="clause-num text-[13px] text-blue-bright">6.1</span> */}
               <h3 className="mt-3 text-[20px] font-bold tracking-[-0.01em]">ISO 인증 컨설팅·거버넌스</h3>
               <p className="mt-2 max-w-md text-[14px] text-slate">
                 42001·27001·27701 통합 인증 로드맵부터 심사 대응까지 하나의 흐름으로 진행합니다.
               </p>
             </div>
             <div className="rounded-sm border border-line p-8 transition-colors hover:border-blue-bright">
-              <span className="clause-num text-[13px] text-blue-bright">4.1</span>
-              <h3 className="mt-3 text-[16px] font-semibold">AI 솔루션 컨설팅</h3>
+{/*           <span className="clause-num text-[13px] text-blue-bright">4.1</span> */}
+              <h3 className="mt-3 text-[20px] font-semibold">AI 솔루션 컨설팅</h3>
               <p className="mt-2 text-[13px] text-slate">AI 도입 전 리스크와 거버넌스를 점검합니다.</p>
             </div>
             <div className="rounded-sm border border-line p-8 transition-colors hover:border-blue-bright">
-              <span className="clause-num text-[13px] text-blue-bright">4.2</span>
-              <h3 className="mt-3 text-[16px] font-semibold">정보보안 관리체계</h3>
+{/*           <span className="clause-num text-[13px] text-blue-bright">4.2</span> */}
+              <h3 className="mt-3 text-[20px] font-semibold">정보보안 관리체계</h3>
               <p className="mt-2 text-[13px] text-slate">ISO 27001 기반 보안 정책 수립부터 인증까지.</p>
             </div>
             <div className="rounded-sm border border-line p-8 transition-colors hover:border-blue-bright">
-              <span className="clause-num text-[13px] text-blue-bright">5.1</span>
-              <h3 className="mt-3 text-[16px] font-semibold">개인정보보호 컨설팅</h3>
+{/*           <span className="clause-num text-[13px] text-blue-bright">5.1</span> */}
+              <h3 className="mt-3 text-[20px] font-semibold">개인정보보호 컨설팅</h3>
               <p className="mt-2 text-[13px] text-slate">ISO 27701 기준 처리 흐름을 문서화합니다.</p>
             </div>
             <div className="rounded-sm border border-line p-8 transition-colors hover:border-blue-bright">
-              <span className="clause-num text-[13px] text-blue-bright">5.2</span>
-              <h3 className="mt-3 text-[16px] font-semibold">전자문서 관리체계</h3>
+{/*           <span className="clause-num text-[13px] text-blue-bright">5.2</span> */}
+              <h3 className="mt-3 text-[20px] font-semibold">전자문서 관리체계</h3>
               <p className="mt-2 text-[13px] text-slate">전자 워크플로우와 보관·검증 체계를 구축합니다.</p>
             </div>
           </div>
