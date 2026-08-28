@@ -7,7 +7,7 @@ type SealStampProps = {
 export default function SealStamp({ code, title, status }: SealStampProps) {
   return (
     <div className="flex flex-col gap-6 rounded-sm border border-ink bg-white p-6">
-      <p className="text-[20px] font-bold tracking-[-0.01em] text-ink">{code}</p>
+      <p className="text-center text-[20px] font-bold tracking-[-0.01em] text-ink">{code}</p>
 
       <img src="/brand/logo.svg" alt="" width={90} height={98} className="mx-auto" />
 
