@@ -20,12 +20,12 @@ export default function Footer() {
             </div>
             <div>
               <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.14em] text-white/40">Contact</p>
-              <p>tnykim29@gmail.com</p>
+              <p>tonykim29@gmail.com</p>
               <p>02-1234-5678</p>
             </div>
             <div>
               <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.14em] text-white/40">Address</p>
-              <p>서울특별시 강나구 삼성동 101</p>
+              <p>서울특별시 강남구 삼성동 101</p>
             </div>
           </div>
         </div>
