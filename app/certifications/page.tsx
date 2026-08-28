@@ -16,7 +16,7 @@ export default function CertificationsPage() {
   return (
     <section className="mx-auto max-w-6xl px-6 py-20">
       <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-blue-bright">Certifications</p>
-      <h1 className="mt-4 max-w-xl text-[30px] font-bold leading-snug">
+      <h1 className="mt-4 max-w-xl text-[32px] font-extrabold leading-[1.2] tracking-[-0.02em] md:text-[42px]">
         심사 기준을 아는 사람이
         <br />
         컨설팅합니다.

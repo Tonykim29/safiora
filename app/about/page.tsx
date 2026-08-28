@@ -20,7 +20,7 @@ export default function AboutPage() {
       <div className="mt-6 flex flex-wrap items-center gap-4">
         <Logo size={40} />
       </div>
-      <h1 className="mt-6 max-w-xl text-[30px] font-bold leading-snug">
+      <h1 className="mt-6 max-w-xl text-[32px] font-extrabold leading-[1.2] tracking-[-0.02em] md:text-[42px]">
         기술이 사람을 해치지 않도록,
         <br />
         그 경계를 설계합니다.
@@ -42,8 +42,8 @@ export default function AboutPage() {
         <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-blue-bright">Core Values</p>
         <div className="mt-8 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-2">
           {VALUES.map((v) => (
-            <div key={v.title} className="bg-white p-8">
-              <p className="text-[16px] font-semibold">{v.title}</p>
+            <div key={v.title} className="bg-white p-8 transition-colors hover:bg-paper">
+              <p className="text-[16px] font-semibold tracking-[-0.01em]">{v.title}</p>
               <p className="mt-2 text-[14px] leading-relaxed text-slate">{v.desc}</p>
             </div>
           ))}

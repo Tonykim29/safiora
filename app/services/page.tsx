@@ -18,11 +18,7 @@ const SERVICES = [
   {
     clause: "4.2",
     title: "정보보안 관리체계 구축",
-    points: [
-      "ISO/IEC 27001 갭 분석 및 위험평가",
-      "보안 정책·절차 문서 작성",
-      "인증심사 대응 및 사후관리",
-    ],
+    points: ["ISO/IEC 27001 갭 분석 및 위험평가", "보안 정책·절차 문서 작성", "인증심사 대응 및 사후관리"],
   },
   {
     clause: "5.1",
@@ -36,11 +32,7 @@ const SERVICES = [
   {
     clause: "5.2",
     title: "전자문서 관리체계",
-    points: [
-      "종이 문서의 전자화 전환 계획 수립",
-      "문서 보관·검증·이력관리 체계 설계",
-      "부서별 워크플로우 정의",
-    ],
+    points: ["종이 문서의 전자화 전환 계획 수립", "문서 보관·검증·이력관리 체계 설계", "부서별 워크플로우 정의"],
   },
   {
     clause: "6.1",
@@ -50,6 +42,7 @@ const SERVICES = [
       "심사 일정 조율 및 문서 준비",
       "인증 이후 유지관리 체계 설계",
     ],
+    featured: true,
   },
 ];
 
@@ -57,27 +50,35 @@ export default function ServicesPage() {
   return (
     <section className="mx-auto max-w-6xl px-6 py-20">
       <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-blue-bright">Services</p>
-      <h1 className="mt-4 max-w-xl text-[30px] font-bold leading-snug">
+      <h1 className="mt-4 max-w-xl text-[32px] font-extrabold leading-[1.2] tracking-[-0.02em] md:text-[42px]">
         진단부터 인증까지,
         <br />
         하나의 체계로 진행합니다.
       </h1>
 
-      <div className="mt-14 space-y-14">
+      <div className="mt-14 grid gap-4 md:grid-cols-2">
         {SERVICES.map((s) => (
-          <div key={s.clause} className="grid gap-6 border-t border-line pt-8 md:grid-cols-[100px_1fr]">
-            <span className="clause-num text-[20px] text-blue-bright">{s.clause}</span>
-            <div>
-              <h2 className="text-[20px] font-semibold">{s.title}</h2>
-              <ul className="mt-4 space-y-2">
-                {s.points.map((p) => (
-                  <li key={p} className="flex gap-3 text-[14px] text-slate">
-                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-leaf" />
-                    {p}
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div
+            key={s.clause}
+            className={`rounded-sm border border-line p-8 transition-colors hover:border-blue-bright md:p-10 ${
+              s.featured ? "md:col-span-2 bg-ink text-white" : "bg-white"
+            }`}
+          >
+            <span className={`clause-num text-[15px] ${s.featured ? "text-glow" : "text-blue-bright"}`}>
+              {s.clause}
+            </span>
+            <h2 className="mt-3 text-[20px] font-bold tracking-[-0.01em] md:text-[22px]">{s.title}</h2>
+            <ul className="mt-5 grid gap-2 md:grid-cols-2">
+              {s.points.map((p) => (
+                <li
+                  key={p}
+                  className={`flex gap-3 text-[14px] ${s.featured ? "text-white/70" : "text-slate"}`}
+                >
+                  <span className={`mt-2 h-1 w-1 shrink-0 rounded-full ${s.featured ? "bg-glow" : "bg-leaf"}`} />
+                  {p}
+                </li>
+              ))}
+            </ul>
           </div>
         ))}
       </div>

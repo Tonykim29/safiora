@@ -31,7 +31,7 @@ export default function SealStamp({ code, title, status }: SealStampProps) {
   return (
     <div
       ref={ref}
-      className={`flex flex-col items-center gap-4 rounded-sm border border-line bg-white p-8 text-center transition-opacity ${
+      className={`flex flex-col items-center gap-4 rounded-sm border border-line bg-white p-8 text-center shadow-[0_1px_0_rgba(0,0,0,0.02)] transition-all hover:border-blue-bright hover:shadow-[0_20px_50px_-25px_rgba(59,125,221,0.45)] ${
         visible ? "opacity-100" : "opacity-0"
       }`}
     >

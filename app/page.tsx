@@ -1,14 +1,6 @@
 import Link from "next/link";
 import Logo from "@/components/Logo";
 
-const SERVICES = [
-  { clause: "4.1", title: "AI 솔루션 컨설팅", desc: "AI 도입 전 단계에서 리스크를 점검하고 실행 가능한 구조로 설계합니다." },
-  { clause: "4.2", title: "정보보안 관리체계", desc: "ISO 27001 기반으로 보안 정책 수립부터 인증 획득까지 지원합니다." },
-  { clause: "5.1", title: "개인정보보호 컨설팅", desc: "ISO 27701 기준으로 개인정보 처리 흐름을 점검하고 문서화합니다." },
-  { clause: "5.2", title: "전자문서 관리체계", desc: "종이 문서를 전자 워크플로우로 전환하고 보관·검증 체계를 구축합니다." },
-  { clause: "6.1", title: "ISO 인증 컨설팅·거버넌스", desc: "42001·27001·27701 인증 준비와 심사 대응을 처음부터 끝까지 진행합니다." },
-];
-
 const VALUES = [
   { title: "안전한 기술", desc: "신뢰할 수 있는 기술로 안전한 사회를 만듭니다." },
   { title: "지속 가능한 성장", desc: "지속 가능한 성장을 통해 미래 가치를 창출합니다." },
@@ -19,40 +11,45 @@ const VALUES = [
 export default function Home() {
   return (
     <>
-      {/* HERO — 인증서 프레임 구조 */}
-      <section className="mx-auto max-w-6xl px-6 pt-16 md:pt-24">
-        <div className="reg-frame border border-line bg-white px-6 py-14 md:px-16 md:py-20">
-          <span className="reg-tr" />
-          <span className="reg-br" />
-          <p className="font-mono text-[12px] uppercase tracking-[0.16em] text-blue-bright">
-            Safiora — AI Safety &amp; Governance
-          </p>
-          <h1 className="mt-6 max-w-2xl text-[32px] font-bold leading-[1.3] md:text-[44px]">
-            안전을 증명하고,
-            <br />
-            신뢰를 설계합니다.
-          </h1>
-          <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-slate">
-            AI 솔루션, 정보보안, 개인정보보호, 전자문서 관리, ISO 인증 컨설팅까지 — 하나의 체계 안에서
-            운영합니다. 공공·금융기관이 요구하는 수준의 문서와 근거로 답합니다.
-          </p>
-          <div className="mt-10 flex flex-wrap gap-3">
-            <Link
-              href="/contact"
-              className="rounded-sm bg-ink px-6 py-3 text-[14px] font-medium text-white transition-colors hover:bg-blue-deep"
-            >
-              상담 문의하기
-            </Link>
-            <Link
-              href="/services"
-              className="rounded-sm border border-line px-6 py-3 text-[14px] font-medium text-ink transition-colors hover:border-blue-bright hover:text-blue-bright"
-            >
-              서비스 보기
-            </Link>
+      {/* HERO — 다크 그라운드 위에 스포트라이트 받은 인증서 카드 */}
+      <section className="grain relative overflow-hidden bg-ink py-20 md:py-28">
+        <div className="glow-blob animate-drift left-[-10%] top-[-20%] h-[520px] w-[520px] bg-blue-bright/30" />
+        <div className="glow-blob animate-drift-slow right-[-15%] top-[10%] h-[420px] w-[420px] bg-leaf/20" />
+
+        <div className="relative mx-auto max-w-6xl px-6">
+          <div className="reg-frame animate-fade-up border border-line bg-paper px-6 py-14 shadow-[0_40px_100px_-30px_rgba(0,0,0,0.6)] md:px-16 md:py-20">
+            <span className="reg-tr" />
+            <span className="reg-br" />
+            <p className="font-mono text-[12px] uppercase tracking-[0.16em] text-blue-bright">
+              Safiora — AI Safety &amp; Governance
+            </p>
+            <h1 className="mt-6 max-w-2xl text-[38px] font-extrabold leading-[1.15] tracking-[-0.02em] md:text-[64px]">
+              안전을 증명하고,
+              <br />
+              신뢰를 설계합니다.
+            </h1>
+            <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-slate md:text-[16px]">
+              AI 솔루션, 정보보안, 개인정보보호, 전자문서 관리, ISO 인증 컨설팅까지 — 하나의 체계 안에서
+              운영합니다. 공공·금융기관이 요구하는 수준의 문서와 근거로 답합니다.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-3">
+              <Link
+                href="/contact"
+                className="rounded-sm bg-ink px-6 py-3 text-[14px] font-medium text-white transition-colors hover:bg-blue-deep"
+              >
+                상담 문의하기
+              </Link>
+              <Link
+                href="/services"
+                className="rounded-sm border border-line px-6 py-3 text-[14px] font-medium text-ink transition-colors hover:border-blue-bright hover:text-blue-bright"
+              >
+                서비스 보기
+              </Link>
+            </div>
+            <p className="mt-14 font-mono text-[11px] uppercase tracking-[0.2em] text-slate/70">
+              For Human Safety &amp; Prosperity
+            </p>
           </div>
-          <p className="mt-14 font-mono text-[11px] uppercase tracking-[0.2em] text-slate/70">
-            For Human Safety &amp; Prosperity
-          </p>
         </div>
       </section>
 
@@ -61,7 +58,7 @@ export default function Home() {
         <div className="grid gap-10 md:grid-cols-[1fr_1.4fr] md:gap-16">
           <div>
             <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-blue-bright">Why Safiora</p>
-            <h2 className="mt-4 text-[24px] font-bold leading-snug">
+            <h2 className="mt-4 text-[26px] font-bold leading-snug tracking-[-0.01em] md:text-[30px]">
               심사 기준을 아는 사람이
               <br />
               직접 설계합니다.
@@ -75,25 +72,47 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 서비스 — ISO 조항 스타일 넘버링 */}
+      {/* 서비스 — 비대칭 벤토 그리드, 6.1이 통합 서비스라 가장 크게 */}
       <section className="border-y border-line bg-white">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <div className="flex items-end justify-between">
             <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-blue-bright">Services</p>
-            <Link href="/services" className="font-mono text-[12px] uppercase tracking-[0.1em] text-slate hover:text-blue-bright">
+            <Link
+              href="/services"
+              className="font-mono text-[12px] uppercase tracking-[0.1em] text-slate hover:text-blue-bright"
+            >
               전체 보기 →
             </Link>
           </div>
-          <div className="mt-8 divide-y divide-line border-t border-line">
-            {SERVICES.map((s) => (
-              <div key={s.clause} className="flex flex-col gap-2 py-6 md:flex-row md:items-baseline md:gap-8">
-                <span className="clause-num w-14 shrink-0 text-[15px] text-blue-bright">{s.clause}</span>
-                <div>
-                  <p className="text-[16px] font-semibold">{s.title}</p>
-                  <p className="mt-1 text-[14px] text-slate">{s.desc}</p>
-                </div>
-              </div>
-            ))}
+
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            <div className="group rounded-sm border border-line p-8 transition-colors hover:border-blue-bright md:col-span-2 md:row-span-1">
+              <span className="clause-num text-[13px] text-blue-bright">6.1</span>
+              <h3 className="mt-3 text-[20px] font-bold tracking-[-0.01em]">ISO 인증 컨설팅·거버넌스</h3>
+              <p className="mt-2 max-w-md text-[14px] text-slate">
+                42001·27001·27701 통합 인증 로드맵부터 심사 대응까지 하나의 흐름으로 진행합니다.
+              </p>
+            </div>
+            <div className="rounded-sm border border-line p-8 transition-colors hover:border-blue-bright">
+              <span className="clause-num text-[13px] text-blue-bright">4.1</span>
+              <h3 className="mt-3 text-[16px] font-semibold">AI 솔루션 컨설팅</h3>
+              <p className="mt-2 text-[13px] text-slate">AI 도입 전 리스크와 거버넌스를 점검합니다.</p>
+            </div>
+            <div className="rounded-sm border border-line p-8 transition-colors hover:border-blue-bright">
+              <span className="clause-num text-[13px] text-blue-bright">4.2</span>
+              <h3 className="mt-3 text-[16px] font-semibold">정보보안 관리체계</h3>
+              <p className="mt-2 text-[13px] text-slate">ISO 27001 기반 보안 정책 수립부터 인증까지.</p>
+            </div>
+            <div className="rounded-sm border border-line p-8 transition-colors hover:border-blue-bright">
+              <span className="clause-num text-[13px] text-blue-bright">5.1</span>
+              <h3 className="mt-3 text-[16px] font-semibold">개인정보보호 컨설팅</h3>
+              <p className="mt-2 text-[13px] text-slate">ISO 27701 기준 처리 흐름을 문서화합니다.</p>
+            </div>
+            <div className="rounded-sm border border-line p-8 transition-colors hover:border-blue-bright">
+              <span className="clause-num text-[13px] text-blue-bright">5.2</span>
+              <h3 className="mt-3 text-[16px] font-semibold">전자문서 관리체계</h3>
+              <p className="mt-2 text-[13px] text-slate">전자 워크플로우와 보관·검증 체계를 구축합니다.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -103,8 +122,8 @@ export default function Home() {
         <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-blue-bright">Core Values</p>
         <div className="mt-8 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
           {VALUES.map((v) => (
-            <div key={v.title} className="bg-white p-7">
-              <p className="text-[15px] font-semibold">{v.title}</p>
+            <div key={v.title} className="bg-white p-7 transition-colors hover:bg-paper">
+              <p className="text-[15px] font-semibold tracking-[-0.01em]">{v.title}</p>
               <p className="mt-2 text-[13px] leading-relaxed text-slate">{v.desc}</p>
             </div>
           ))}

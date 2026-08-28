@@ -1,4 +1,5 @@
 import Logo from "./Logo";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -14,23 +15,25 @@ export default function Footer() {
           <div className="grid grid-cols-2 gap-8 text-[13px] text-white/70 sm:grid-cols-3">
             <div>
               <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.14em] text-white/40">Business</p>
-              <p>사업자등록번호 123-45-6789</p>
-              <p>대표 김태형</p>
+              <p>사업자등록번호 [등록 후 표기]</p>
+              <p>대표 [성명 입력 예정]</p>
             </div>
             <div>
               <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.14em] text-white/40">Contact</p>
-              <p>tonykim29@gmail.com</p>
-              <p>010-1234-5678</p>
+              <p>[이메일 입력 예정]</p>
+              <p>[연락처 입력 예정]</p>
             </div>
             <div>
               <p className="mb-3 font-mono text-[11px] uppercase tracking-[0.14em] text-white/40">Address</p>
-              <p>서울특별시 강남구 삼성동 123</p>
+              <p>[주소 입력 예정]</p>
             </div>
           </div>
         </div>
         <div className="mt-12 flex flex-col gap-2 border-t border-white/10 pt-6 text-[12px] text-white/40 sm:flex-row sm:justify-between">
           <p>© {new Date().getFullYear()} Safiora. All rights reserved.</p>
-          <p>개인정보처리방침 [게시 예정]</p>
+          <Link href="/privacy" className="hover:text-white/70">
+            개인정보처리방침
+          </Link>
         </div>
       </div>
     </footer>
