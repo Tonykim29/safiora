@@ -32,6 +32,35 @@ export default function AiConsultingPage() {
         "고객사나 상위 기관으로부터 AI 거버넌스 체계를 요구받은 조직",
         "AI 관련 인증(ISO/IEC 42001)을 준비하려는 조직",
       ]}
+      deliverables={[
+        {
+          category: "정책·매뉴얼",
+          items: ["AIMS 경영방침", "AIMS 매뉴얼"],
+        },
+        {
+          category: "절차서",
+          items: [
+            "AI 리스크 평가·처리",
+            "AI 영향평가",
+            "AI 시스템 수명주기관리",
+            "내부심사",
+            "경영검토",
+          ],
+        },
+        {
+          category: "지침서",
+          items: ["데이터 관리 지침", "AI 리스크 식별·평가 방법", "AI 영향평가 수행 가이드"],
+        },
+        {
+          category: "양식·기록물",
+          items: [
+            "AI 정보자산목록",
+            "AI 영향평가보고서",
+            "위험분석 평가표",
+            "SoA(적용성 선언서)",
+          ],
+        },
+      ]}
       processNote="현황 진단으로 시작해 조직에 맞는 가이드라인·정책을 문서화하는 순서로 진행합니다."
     />
   );

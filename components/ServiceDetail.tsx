@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { LucideIcon } from "lucide-react";
+import { FileText, type LucideIcon } from "lucide-react";
 
 type ServiceDetailProps = {
   icon: LucideIcon;
@@ -7,6 +7,7 @@ type ServiceDetailProps = {
   tagline: string;
   points: { title: string; desc: string }[];
   audiences: string[];
+  deliverables?: { category: string; items: string[] }[];
   processNote: string;
 };
 
@@ -16,6 +17,7 @@ export default function ServiceDetail({
   tagline,
   points,
   audiences,
+  deliverables,
   processNote,
 }: ServiceDetailProps) {
   return (
@@ -55,6 +57,40 @@ export default function ServiceDetail({
           ))}
         </ul>
       </div>
+
+      {deliverables && (
+        <div className="mt-14 border-t border-line pt-10">
+          <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-blue-bright">Deliverables</p>
+          <h2 className="mt-4 text-[17px] font-bold tracking-[-0.01em]">제공 산출물</h2>
+
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            {deliverables.map((d) => (
+              <div
+                key={d.category}
+                className="rounded-sm border border-line bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              >
+                <div className="flex items-center gap-2">
+                  <FileText className="h-5 w-5 text-blue-bright" strokeWidth={1.75} aria-hidden="true" />
+                  <h3 className="text-[15px] font-bold tracking-[-0.01em]">{d.category}</h3>
+                </div>
+                <ul className="mt-4 space-y-2">
+                  {d.items.map((item) => (
+                    <li key={item} className="flex gap-3 text-[13px] text-slate">
+                      <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-leaf" aria-hidden="true" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-6 max-w-2xl text-[13px] leading-relaxed text-slate">
+            문서는 체계적인 코드 관리 체계로 식별·관리됩니다. 실제 제공 문서는 조직 규모와 준비 상태에 따라
+            달라질 수 있습니다.
+          </p>
+        </div>
+      )}
 
       <div className="mt-14 border-t border-line pt-10">
         <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-blue-bright">진행 방식</p>
