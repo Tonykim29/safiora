@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Award, FileText, Layers, UserCheck } from "lucide-react";
 import Logo from "@/components/Logo";
 
 const VALUES = [
@@ -6,6 +7,29 @@ const VALUES = [
   { title: "지속 가능한 성장", desc: "지속 가능한 성장을 통해 미래 가치를 창출합니다." },
   { title: "인류 중심 가치", desc: "사람을 생각하는 기술로 인류의 번영에 기여합니다." },
   { title: "글로벌 파트너십", desc: "전문성과 신뢰를 바탕으로 함께 성장하는 파트너가 됩니다." },
+];
+
+const WHY_SAFIORA = [
+  {
+    icon: UserCheck,
+    title: "직접 수행 — 외주 하청 없음",
+    desc: "컨설팅부터 문서 작성, 심사 대응까지 같은 사람이 끝까지 책임집니다.",
+  },
+  {
+    icon: Award,
+    title: "ISO 심사원 관점의 컨설팅",
+    desc: "심사원 자격을 보유한 대표가 심사 기준에 맞춰 설계합니다.",
+  },
+  {
+    icon: FileText,
+    title: "공공·금융 제안서 작성 경험",
+    desc: "공공·금융기관이 요구하는 문서 수준에 맞춰 대응합니다.",
+  },
+  {
+    icon: Layers,
+    title: "42001·27001·27701 통합 대응",
+    desc: "AI·정보보안·개인정보보호 인증을 하나의 로드맵으로 통합합니다.",
+  },
 ];
 
 export default function Home() {
@@ -55,19 +79,21 @@ export default function Home() {
 
       {/* 신뢰 근거 */}
       <section className="mx-auto max-w-6xl px-6 py-20">
-        <div className="grid gap-10 md:grid-cols-[1fr_1.4fr] md:gap-16">
-          <div>
-            <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-blue-bright">Why Safiora</p>
-            <h2 className="mt-4 text-[26px] font-bold leading-snug tracking-[-0.01em] md:text-[30px]">
-              심사 기준을 아는 사람이
-              <br />
-              직접 설계합니다.
-            </h2>
-          </div>
-          <p className="text-[15px] leading-relaxed text-slate">
-            Safiora는 ISO/IEC 42001, 27001, 27701 인증심사원 자격을 보유한 대표가 직접 컨설팅부터 문서
-            작성, 심사 대응까지 맡습니다. 외주 하청 구조 없이 처음부터 끝까지 같은 사람이 책임집니다.            
-          </p>
+        <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-blue-bright">Why Safiora</p>
+        <h2 className="mt-4 max-w-xl text-[26px] font-bold leading-snug tracking-[-0.01em] md:text-[30px]">
+          심사 기준을 아는 사람이
+          <br />
+          직접 설계합니다.
+        </h2>
+
+        <div className="mt-10 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+          {WHY_SAFIORA.map((item) => (
+            <div key={item.title} className="bg-white p-7 transition-colors hover:bg-paper">
+              <item.icon className="h-6 w-6 text-blue-bright" strokeWidth={1.75} aria-hidden="true" />
+              <p className="mt-4 text-[15px] font-semibold leading-snug tracking-[-0.01em]">{item.title}</p>
+              <p className="mt-2 text-[13px] leading-relaxed text-slate">{item.desc}</p>
+            </div>
+          ))}
         </div>
       </section>
 
