@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Award, FileText, Layers, UserCheck } from "lucide-react";
+import { Award, ChevronDown, FileText, Layers, UserCheck } from "lucide-react";
 import Logo from "@/components/Logo";
 
 const VALUES = [
@@ -7,6 +7,33 @@ const VALUES = [
   { title: "지속 가능한 성장", desc: "지속 가능한 성장을 통해 미래 가치를 창출합니다." },
   { title: "인류 중심 가치", desc: "사람을 생각하는 기술로 인류의 번영에 기여합니다." },
   { title: "글로벌 파트너십", desc: "전문성과 신뢰를 바탕으로 함께 성장하는 파트너가 됩니다." },
+];
+
+const FAQ = [
+  {
+    q: "ISO 인증 컨설팅은 보통 얼마나 걸리나요?",
+    a: "조직 규모와 준비 상태, 대상 표준 개수에 따라 소요 기간이 달라집니다. 정확한 일정은 초기 진단 이후 협의를 통해 안내드립니다.",
+  },
+  {
+    q: "여러 표준(42001·27001·27701)을 동시에 준비할 수 있나요?",
+    a: "네, 공통되는 문서 체계와 관리 프로세스를 통합해 함께 준비할 수 있습니다. 표준별 중복 작업을 줄이는 방향으로 로드맵을 설계합니다.",
+  },
+  {
+    q: "비용은 어떻게 산정되나요?",
+    a: "조직 규모, 준비 범위, 대상 표준 수에 따라 달라져 일괄 금액으로 안내드리기 어렵습니다. 현황 진단 후 협의를 통해 안내드립니다.",
+  },
+  {
+    q: "인증 후에도 계속 관리가 필요한가요?",
+    a: "인증 유지를 위해 내부심사, 문서 갱신 등 사후관리가 필요합니다. Safiora는 인증 이후 유지관리 체계 설계도 함께 지원합니다.",
+  },
+  {
+    q: "소규모 조직도 ISO 인증이 가능한가요?",
+    a: "조직 규모와 관계없이 요구사항에 맞는 체계를 갖추면 인증이 가능합니다. 규모에 맞는 문서 수준과 절차로 설계해 드립니다.",
+  },
+  {
+    q: "심사에서 떨어지면 어떻게 되나요?",
+    a: "심사에서 부적합 사항이 나오면 시정조치 후 재심사를 받는 절차로 진행됩니다. Safiora는 심사원 관점에서 사전에 리스크를 점검해 이런 상황을 최소화합니다.",
+  },
 ];
 
 const WHY_SAFIORA = [
@@ -151,6 +178,29 @@ export default function Home() {
               <p className="text-[15px] font-semibold tracking-[-0.01em]">{v.title}</p>
               <p className="mt-2 text-[13px] leading-relaxed text-slate">{v.desc}</p>
             </div>
+          ))}
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="mx-auto max-w-6xl px-6 py-20">
+        <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-blue-bright">FAQ</p>
+        <h2 className="mt-4 max-w-xl text-[26px] font-bold leading-snug tracking-[-0.01em] md:text-[30px]">
+          자주 묻는 질문
+        </h2>
+
+        <div className="mt-10 border-t border-line">
+          {FAQ.map((item) => (
+            <details key={item.q} className="group border-b border-line py-2">
+              <summary className="flex min-h-[44px] cursor-pointer list-none items-center justify-between gap-4 py-3 text-[15px] font-semibold tracking-[-0.01em] [&::-webkit-details-marker]:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-leaf focus-visible:ring-offset-2">
+                {item.q}
+                <ChevronDown
+                  className="h-5 w-5 shrink-0 text-slate transition-transform duration-200 group-open:rotate-180"
+                  aria-hidden="true"
+                />
+              </summary>
+              <p className="pb-4 pr-10 text-[14px] leading-relaxed text-slate">{item.a}</p>
+            </details>
           ))}
         </div>
       </section>
