@@ -211,16 +211,30 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4대 가치 */}
-      <section className="mx-auto max-w-6xl px-6 py-20">
-        <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-blue-bright">Core Values</p>
-        <div className="mt-8 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
-          {VALUES.map((v) => (
-            <div key={v.title} className="bg-white p-7 transition-colors hover:bg-paper">
-              <p className="text-[15px] font-semibold tracking-[-0.01em]">{v.title}</p>
-              <p className="mt-2 text-[13px] leading-relaxed text-slate">{v.desc}</p>
+      {/* 4대 가치 — 하나는 확대된 인용구로, 나머지는 슬림 리스트로 배치 */}
+      <section className="bg-ink text-white">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-glow">Core Values</p>
+
+          <div className="mt-10 grid gap-10 md:grid-cols-[1.3fr_1fr] md:items-start md:gap-12">
+            <div>
+              <p className="max-w-md text-[28px] font-bold leading-snug tracking-[-0.01em] md:text-[38px]">
+                {VALUES[0].title}
+              </p>
+              <p className="mt-4 max-w-sm text-[15px] leading-relaxed text-white/60 md:text-[16px]">
+                {VALUES[0].desc}
+              </p>
             </div>
-          ))}
+
+            <ul className="space-y-6 border-t border-white/15 pt-6 md:border-l md:border-t-0 md:pl-10 md:pt-0">
+              {VALUES.slice(1).map((v) => (
+                <li key={v.title} className="border-l-2 border-leaf pl-4">
+                  <p className="text-[15px] font-semibold tracking-[-0.01em]">{v.title}</p>
+                  <p className="mt-1.5 text-[13px] leading-relaxed text-white/60">{v.desc}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 

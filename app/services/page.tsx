@@ -132,11 +132,12 @@ export default function ServicesPage() {
             아래는 실제 산출물이 아닌, 형태를 보여주기 위한 익명화된 예시입니다.
           </p>
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+          {/* 모바일: 가로 스크롤 리스트, sm 이상: 3단 그리드 */}
+          <div className="mt-10 -mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-2 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0 sm:pb-0">
             {DELIVERABLES.map((d, i) => (
               <div
                 key={d.title}
-                className="group relative overflow-hidden rounded-sm border border-line bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                className="group relative w-[78%] shrink-0 snap-start overflow-hidden rounded-sm border border-line bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:w-auto sm:shrink"
               >
                 <d.icon
                   className="pointer-events-none absolute right-5 top-5 h-9 w-9 text-slate/20"
@@ -154,6 +155,11 @@ export default function ServicesPage() {
                   ))}
                 </div>
               </div>
+            ))}
+          </div>
+          <div className="mt-4 flex justify-center gap-1.5 sm:hidden" aria-hidden="true">
+            {DELIVERABLES.map((d) => (
+              <span key={d.title} className="h-1.5 w-1.5 rounded-full bg-leaf/40" />
             ))}
           </div>
         </div>
