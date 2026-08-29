@@ -47,6 +47,24 @@ const SERVICES = [
   },
 ];
 
+const DELIVERABLES = [
+  {
+    title: "정보보안 정책서",
+    icon: ShieldCheck,
+    lines: ["w-3/4", "w-full", "w-5/6", "w-2/3", "w-full", "w-4/5", "w-1/2"],
+  },
+  {
+    title: "개인정보 처리방침",
+    icon: UserCheck,
+    lines: ["w-full", "w-5/6", "w-3/4", "w-full", "w-2/3", "w-4/5", "w-1/2"],
+  },
+  {
+    title: "ISO 인증 로드맵 문서",
+    icon: BadgeCheck,
+    lines: ["w-2/3", "w-full", "w-4/5", "w-full", "w-3/4", "w-5/6", "w-1/2"],
+  },
+];
+
 const PROCESS = [
   {
     num: "01",
@@ -113,6 +131,44 @@ export default function ServicesPage() {
               </ul>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* 산출물 미리보기 — 익명화된 목업, 실제 문서 아님 */}
+      <section className="border-t border-line bg-white">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-blue-bright">Deliverables</p>
+          <h2 className="mt-4 max-w-xl text-[26px] font-bold leading-snug tracking-[-0.01em] md:text-[30px]">
+            이런 문서를 만들어 드립니다.
+          </h2>
+          <p className="mt-4 max-w-xl text-[14px] leading-relaxed text-slate">
+            아래는 실제 산출물이 아닌, 형태를 보여주기 위한 익명화된 예시입니다.
+          </p>
+
+          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+            {DELIVERABLES.map((d, i) => (
+              <div
+                key={d.title}
+                className="group relative overflow-hidden rounded-sm border border-line bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              >
+                <d.icon
+                  className="pointer-events-none absolute right-5 top-5 h-9 w-9 text-line"
+                  strokeWidth={1.5}
+                  aria-hidden="true"
+                />
+                <p className="clause-num text-[11px] uppercase tracking-[0.12em] text-slate/60">
+                  Sample · 0{i + 1}
+                </p>
+                <h3 className="mt-2 max-w-[80%] text-[16px] font-bold tracking-[-0.01em]">{d.title}</h3>
+
+                <div className="mt-6 space-y-2.5" aria-hidden="true">
+                  {d.lines.map((w, li) => (
+                    <div key={li} className={`h-2 ${w} rounded-full bg-line ${li === 3 ? "mt-4" : ""}`} />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
