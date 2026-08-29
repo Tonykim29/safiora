@@ -139,7 +139,7 @@ export default function ServicesPage() {
                 className="group relative overflow-hidden rounded-sm border border-line bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
                 <d.icon
-                  className="pointer-events-none absolute right-5 top-5 h-9 w-9 text-line"
+                  className="pointer-events-none absolute right-5 top-5 h-9 w-9 text-slate/20"
                   strokeWidth={1.5}
                   aria-hidden="true"
                 />
@@ -150,7 +150,7 @@ export default function ServicesPage() {
 
                 <div className="mt-6 space-y-2.5" aria-hidden="true">
                   {d.lines.map((w, li) => (
-                    <div key={li} className={`h-2 ${w} rounded-full bg-line ${li === 3 ? "mt-4" : ""}`} />
+                    <div key={li} className={`h-2 ${w} rounded-full bg-slate/40 ${li === 3 ? "mt-4" : ""}`} />
                   ))}
                 </div>
               </div>
