@@ -1,5 +1,15 @@
 import Link from "next/link";
-import { Award, ChevronDown, FileText, Layers, UserCheck } from "lucide-react";
+import {
+  Award,
+  BadgeCheck,
+  BrainCircuit,
+  ChevronDown,
+  FileText,
+  FolderCheck,
+  Layers,
+  ShieldCheck,
+  UserCheck,
+} from "lucide-react";
 import Logo from "@/components/Logo";
 
 const VALUES = [
@@ -139,29 +149,29 @@ export default function Home() {
 
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             <div className="group rounded-sm border border-line p-8 transition-colors hover:border-blue-bright md:col-span-2 md:row-span-1">
-{/*           <span className="clause-num text-[13px] text-blue-bright">6.1</span> */}
+              <BadgeCheck className="h-6 w-6 text-blue-bright" strokeWidth={1.75} aria-hidden="true" />
               <h3 className="mt-3 text-[20px] font-bold tracking-[-0.01em]">ISO 인증 컨설팅·거버넌스</h3>
               <p className="mt-2 max-w-md text-[14px] text-slate">
                 42001·27001·27701 통합 인증 로드맵부터 심사 대응까지 하나의 흐름으로 진행합니다.
               </p>
             </div>
             <div className="rounded-sm border border-line p-8 transition-colors hover:border-blue-bright">
-{/*           <span className="clause-num text-[13px] text-blue-bright">4.1</span> */}
+              <BrainCircuit className="h-5 w-5 text-blue-bright" strokeWidth={1.75} aria-hidden="true" />
               <h3 className="mt-3 text-[20px] font-semibold">AI 솔루션 컨설팅</h3>
               <p className="mt-2 text-[13px] text-slate">AI 도입 전 리스크와 거버넌스를 점검합니다.</p>
             </div>
             <div className="rounded-sm border border-line p-8 transition-colors hover:border-blue-bright">
-{/*           <span className="clause-num text-[13px] text-blue-bright">4.2</span> */}
+              <ShieldCheck className="h-5 w-5 text-blue-bright" strokeWidth={1.75} aria-hidden="true" />
               <h3 className="mt-3 text-[20px] font-semibold">정보보안 관리체계</h3>
               <p className="mt-2 text-[13px] text-slate">ISO 27001 기반 보안 정책 수립부터 인증까지.</p>
             </div>
             <div className="rounded-sm border border-line p-8 transition-colors hover:border-blue-bright">
-{/*           <span className="clause-num text-[13px] text-blue-bright">5.1</span> */}
+              <UserCheck className="h-5 w-5 text-blue-bright" strokeWidth={1.75} aria-hidden="true" />
               <h3 className="mt-3 text-[20px] font-semibold">개인정보보호 컨설팅</h3>
               <p className="mt-2 text-[13px] text-slate">ISO 27701 기준 처리 흐름을 문서화합니다.</p>
             </div>
             <div className="rounded-sm border border-line p-8 transition-colors hover:border-blue-bright">
-{/*           <span className="clause-num text-[13px] text-blue-bright">5.2</span> */}
+              <FolderCheck className="h-5 w-5 text-blue-bright" strokeWidth={1.75} aria-hidden="true" />
               <h3 className="mt-3 text-[20px] font-semibold">전자문서 관리체계</h3>
               <p className="mt-2 text-[13px] text-slate">전자 워크플로우와 보관·검증 체계를 구축합니다.</p>
             </div>
