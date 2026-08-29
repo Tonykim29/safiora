@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FileText, type LucideIcon } from "lucide-react";
+import DocumentOutline from "./DocumentOutline";
 
 type ServiceDetailProps = {
   icon: LucideIcon;
@@ -8,6 +9,7 @@ type ServiceDetailProps = {
   points: { title: string; desc: string }[];
   audiences: string[];
   deliverables?: { category: string; items: string[] }[];
+  documentOutlines?: { docType: string; docCode: string; sections: string[] }[];
   processNote: string;
 };
 
@@ -18,6 +20,7 @@ export default function ServiceDetail({
   points,
   audiences,
   deliverables,
+  documentOutlines,
   processNote,
 }: ServiceDetailProps) {
   return (
@@ -89,6 +92,24 @@ export default function ServiceDetail({
             문서는 체계적인 코드 관리 체계로 식별·관리됩니다. 실제 제공 문서는 조직 규모와 준비 상태에 따라
             달라질 수 있습니다.
           </p>
+        </div>
+      )}
+
+      {documentOutlines && (
+        <div className="mt-14 border-t border-line pt-10">
+          <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-blue-bright">
+            Document Structure
+          </p>
+          <h2 className="mt-4 text-[17px] font-bold tracking-[-0.01em]">문서 구조 예시</h2>
+          <p className="mt-2 max-w-2xl text-[14px] leading-relaxed text-slate">
+            ISO/IEC 42001 인증 준비 시 실제로 작성하는 문서 체계의 목차 구조입니다.
+          </p>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {documentOutlines.map((d) => (
+              <DocumentOutline key={d.docCode} {...d} />
+            ))}
+          </div>
         </div>
       )}
 
