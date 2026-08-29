@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { BadgeCheck, BrainCircuit, FolderCheck, ShieldCheck, UserCheck } from "lucide-react";
 import ProcessSteps from "@/components/ProcessSteps";
 
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
 const SERVICES = [
   {
     title: "AI 솔루션 컨설팅",
+    href: "/services/ai-consulting",
     icon: BrainCircuit,
     points: [
       "AI 도입 전 리스크·거버넌스 진단",
@@ -19,11 +21,13 @@ const SERVICES = [
   },
   {
     title: "정보보안 관리체계 구축",
+    href: "/services/information-security",
     icon: ShieldCheck,
     points: ["ISO/IEC 27001 갭 분석 및 위험평가", "보안 정책·절차 문서 작성", "인증심사 대응 및 사후관리"],
   },
   {
     title: "개인정보보호 컨설팅",
+    href: "/services/privacy",
     icon: UserCheck,
     points: [
       "ISO/IEC 27701 기준 개인정보 처리방침 점검",
@@ -33,11 +37,13 @@ const SERVICES = [
   },
   {
     title: "전자문서 관리체계",
+    href: "/services/document-management",
     icon: FolderCheck,
     points: ["종이 문서의 전자화 전환 계획 수립", "문서 보관·검증·이력관리 체계 설계", "부서별 워크플로우 정의"],
   },
   {
     title: "ISO 인증 컨설팅·거버넌스",
+    href: "/services/iso-governance",
     icon: BadgeCheck,
     points: [
       "42001·27001·27701 통합 인증 로드맵 수립",
@@ -79,9 +85,10 @@ export default function ServicesPage() {
 
         <div className="mt-14 grid gap-4 md:grid-cols-2">
           {SERVICES.map((s) => (
-            <div
+            <Link
               key={s.title}
-              className={`rounded-sm border border-line p-8 transition-colors hover:border-blue-bright md:p-10 ${
+              href={s.href}
+              className={`block rounded-sm border border-line p-8 transition-colors hover:border-blue-bright md:p-10 ${
                 s.featured ? "md:col-span-2 bg-ink text-white" : "bg-white"
               }`}
             >
@@ -102,7 +109,14 @@ export default function ServicesPage() {
                   </li>
                 ))}
               </ul>
-            </div>
+              <p
+                className={`tap-target mt-6 text-[13px] font-medium ${
+                  s.featured ? "text-white/80" : "text-blue-bright"
+                }`}
+              >
+                자세히 보기 →
+              </p>
+            </Link>
           ))}
         </div>
       </section>
@@ -146,7 +160,7 @@ export default function ServicesPage() {
       </section>
 
       {/* 진행 프로세스 */}
-      <section className="border-t border-line bg-paper">
+      <section id="process" className="border-t border-line bg-paper">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-blue-bright">Process</p>
           <h2 className="mt-4 max-w-xl text-[26px] font-bold leading-snug tracking-[-0.01em] md:text-[30px]">
