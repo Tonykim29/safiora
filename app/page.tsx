@@ -10,6 +10,7 @@ import {
   ShieldCheck,
   UserCheck,
 } from "lucide-react";
+import HeroGlow from "@/components/HeroGlow";
 import Logo from "@/components/Logo";
 import ServiceHub from "@/components/ServiceHub";
 
@@ -75,8 +76,7 @@ export default function Home() {
     <>
       {/* HERO — 다크 그라운드 위에 스포트라이트 받은 인증서 카드 */}
       <section className="grain relative overflow-hidden bg-ink py-20 md:py-28">
-        <div className="glow-blob animate-drift left-[-10%] top-[-20%] h-[520px] w-[520px] bg-blue-bright/30" />
-        <div className="glow-blob animate-drift-slow right-[-15%] top-[10%] h-[420px] w-[420px] bg-leaf/20" />
+        <HeroGlow />
 
         <div className="relative mx-auto max-w-6xl px-6">
           <div className="reg-frame animate-fade-up border border-line bg-paper px-6 py-14 shadow-[0_40px_100px_-30px_rgba(0,0,0,0.6)] md:px-16 md:py-20">
