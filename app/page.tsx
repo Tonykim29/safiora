@@ -11,6 +11,7 @@ import {
   UserCheck,
 } from "lucide-react";
 import Logo from "@/components/Logo";
+import ServiceHub from "@/components/ServiceHub";
 
 const VALUES = [
   { title: "안전한 기술", desc: "신뢰할 수 있는 기술로 안전한 사회를 만듭니다." },
@@ -131,6 +132,22 @@ export default function Home() {
               <p className="mt-2 text-[13px] leading-relaxed text-slate">{item.desc}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* 통합 구조도 — 허브(Safiora) - 스포크(5개 서비스) */}
+      <section className="border-t border-line bg-paper">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-blue-bright">One System</p>
+          <h2 className="mt-4 max-w-xl text-[26px] font-bold leading-snug tracking-[-0.01em] md:text-[30px]">
+            다섯 개 영역이
+            <br />
+            하나의 체계로 연결됩니다.
+          </h2>
+
+          <div className="mt-14">
+            <ServiceHub />
+          </div>
         </div>
       </section>
 
