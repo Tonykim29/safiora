@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Banknote, Landmark, Rocket } from "lucide-react";
 import Logo from "@/components/Logo";
 
 export const metadata: Metadata = {
@@ -11,6 +12,24 @@ const VALUES = [
   { title: "지속 가능한 성장", desc: "지속 가능한 성장을 통해 미래 가치를 창출합니다." },
   { title: "인류 중심 가치", desc: "사람을 생각하는 기술로 인류의 번영에 기여합니다." },
   { title: "글로벌 파트너십", desc: "전문성과 신뢰를 바탕으로 함께 성장하는 파트너가 됩니다." },
+];
+
+const AUDIENCES = [
+  {
+    icon: Landmark,
+    title: "공공기관",
+    desc: "입찰·제안 단계부터 요구되는 정보보호 수준을 사전에 충족합니다.",
+  },
+  {
+    icon: Banknote,
+    title: "금융기관",
+    desc: "엄격한 규제 환경에 맞춰 정보보안·개인정보보호 체계를 설계합니다.",
+  },
+  {
+    icon: Rocket,
+    title: "스타트업·중소기업",
+    desc: "제한된 리소스 안에서도 핵심 요구사항부터 단계적으로 인증을 준비합니다.",
+  },
 ];
 
 export default function AboutPage() {
@@ -45,6 +64,19 @@ export default function AboutPage() {
             <div key={v.title} className="bg-white p-8 transition-colors hover:bg-paper">
               <p className="text-[20px] font-semibold tracking-[-0.01em]">{v.title}</p>
               <p className="mt-2 text-[14px] leading-relaxed text-slate">{v.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-16">
+        <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-blue-bright">Who We Work With</p>
+        <div className="mt-8 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-3">
+          {AUDIENCES.map((a) => (
+            <div key={a.title} className="bg-white p-8 transition-colors hover:bg-paper">
+              <a.icon className="h-6 w-6 text-blue-bright" strokeWidth={1.75} aria-hidden="true" />
+              <p className="mt-4 text-[20px] font-semibold tracking-[-0.01em]">{a.title}</p>
+              <p className="mt-2 text-[14px] leading-relaxed text-slate">{a.desc}</p>
             </div>
           ))}
         </div>
