@@ -16,6 +16,13 @@ export const metadata: Metadata = {
     siteName: "Safiora",
     locale: "ko_KR",
     type: "website",
+    images: ["/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Safiora | AI 안전·정보보안·ISO 컨설팅",
+    description: "신뢰할 수 있는 기술로 안전한 사회를 만듭니다.",
+    images: ["/og-image.png"],
   },
 };
 
