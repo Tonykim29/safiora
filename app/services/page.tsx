@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BadgeCheck, BrainCircuit, FolderCheck, ShieldCheck, UserCheck } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "서비스 | Safiora",
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
 const SERVICES = [
   {
     title: "AI 솔루션 컨설팅",
+    icon: BrainCircuit,
     points: [
       "AI 도입 전 리스크·거버넌스 진단",
       "ISO/IEC 42001 기준에 맞춘 AI 경영시스템 설계",
@@ -16,10 +18,12 @@ const SERVICES = [
   },
   {
     title: "정보보안 관리체계 구축",
+    icon: ShieldCheck,
     points: ["ISO/IEC 27001 갭 분석 및 위험평가", "보안 정책·절차 문서 작성", "인증심사 대응 및 사후관리"],
   },
   {
     title: "개인정보보호 컨설팅",
+    icon: UserCheck,
     points: [
       "ISO/IEC 27701 기준 개인정보 처리방침 점검",
       "개인정보 흐름도 작성 및 처리 근거 문서화",
@@ -28,10 +32,12 @@ const SERVICES = [
   },
   {
     title: "전자문서 관리체계",
+    icon: FolderCheck,
     points: ["종이 문서의 전자화 전환 계획 수립", "문서 보관·검증·이력관리 체계 설계", "부서별 워크플로우 정의"],
   },
   {
     title: "ISO 인증 컨설팅·거버넌스",
+    icon: BadgeCheck,
     points: [
       "42001·27001·27701 통합 인증 로드맵 수립",
       "심사 일정 조율 및 문서 준비",
@@ -88,6 +94,11 @@ export default function ServicesPage() {
                 s.featured ? "md:col-span-2 bg-ink text-white" : "bg-white"
               }`}
             >
+              <s.icon
+                className={`h-6 w-6 ${s.featured ? "text-white" : "text-blue-bright"}`}
+                strokeWidth={1.75}
+                aria-hidden="true"
+              />
               <h2 className="mt-3 text-[20px] font-bold tracking-[-0.01em] md:text-[22px]">{s.title}</h2>
               <ul className="mt-5 grid gap-2 md:grid-cols-2">
                 {s.points.map((p) => (
