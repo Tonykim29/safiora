@@ -28,8 +28,14 @@ export default function CertificationsPage() {
       </p>
 
       <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {CERTS.map((c) => (
-          <SealStamp key={c.code} code={c.code} title={c.title} status={c.status} />
+        {CERTS.map((c, i) => (
+          <SealStamp
+            key={c.code}
+            code={c.code}
+            title={c.title}
+            status={c.status}
+            accent={i % 2 === 1 ? "leaf" : "blue"}
+          />
         ))}
       </div>
     </section>

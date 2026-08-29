@@ -71,14 +71,34 @@ export default function AboutPage() {
 
       <div className="mt-16">
         <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-blue-bright">Who We Work With</p>
-        <div className="mt-8 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-3">
-          {AUDIENCES.map((a) => (
-            <div key={a.title} className="bg-white p-8 transition-colors hover:bg-paper">
-              <a.icon className="h-6 w-6 text-blue-bright" strokeWidth={1.75} aria-hidden="true" />
-              <p className="mt-4 text-[20px] font-semibold tracking-[-0.01em]">{a.title}</p>
-              <p className="mt-2 text-[14px] leading-relaxed text-slate">{a.desc}</p>
-            </div>
-          ))}
+        <div className="mt-8 divide-y divide-line border-t border-line">
+          {AUDIENCES.map((a, i) => {
+            const isAccent = i % 2 === 1;
+            return (
+              <div
+                key={a.title}
+                className={`flex flex-col gap-5 py-10 sm:flex-row sm:items-center sm:gap-10 ${
+                  isAccent ? "sm:flex-row-reverse" : ""
+                }`}
+              >
+                <span
+                  className={`flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-2 ${
+                    isAccent ? "border-leaf" : "border-blue-bright"
+                  }`}
+                >
+                  <a.icon
+                    className={`h-7 w-7 ${isAccent ? "text-leaf" : "text-blue-bright"}`}
+                    strokeWidth={1.5}
+                    aria-hidden="true"
+                  />
+                </span>
+                <div className={isAccent ? "sm:text-right" : ""}>
+                  <p className="text-[20px] font-semibold tracking-[-0.01em]">{a.title}</p>
+                  <p className="mt-2 max-w-md text-[14px] leading-relaxed text-slate">{a.desc}</p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
